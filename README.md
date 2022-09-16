@@ -1,2 +1,1 @@
-# building-calculator
-React app for calculating buildings things
+An application for builders.
