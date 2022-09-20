@@ -1,0 +1,20 @@
+.root {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.dots {
+  animation: blinking 1.5s step-start infinite;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
