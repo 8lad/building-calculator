@@ -1,0 +1,9 @@
+.root {
+  span {
+    display: block;
+    font-size: 24px;
+  }
+  span:first-child {
+    margin-bottom: 5px;
+  }
+}
