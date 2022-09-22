@@ -25,3 +25,12 @@ export function returnYear(): number {
 export function returnFullDate(): string {
   return `${returnDate()}.${returnMonth()}.${returnYear()}`;
 }
+
+export function returnErrorText(e: Error): string {
+  const error = e;
+  return error.message;
+}
+
+export function cutCurrencyValue(currency: string): string {
+  return currency.replace(/\.(\d{1,2}).*$/, ".$1");
+}
