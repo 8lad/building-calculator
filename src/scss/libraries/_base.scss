@@ -38,7 +38,9 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+ul,
+ol {
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -46,6 +48,15 @@ h6 {
 
 img {
   display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
 }
 
 #root {
@@ -57,7 +68,17 @@ img {
 
 .container {
   max-width: 1230px;
+  width: 100%;
   padding: 0 15px;
   margin: 0 auto;
   background-color: $main-background;
+  flex-grow: 1;
+}
+
+.base__wrapper {
+  width: 100%;
+  padding: 50px 0 40px;
+}
+.accent__color {
+  color: $accent-color;
 }

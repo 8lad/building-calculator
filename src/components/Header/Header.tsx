@@ -3,6 +3,7 @@ import logo from "../../assets/images/logo.png";
 import Clock from "../Clock/Clock";
 import CurrentDate from "../CurrentDate/CurrentDate";
 import Currency from "../Currency/Currency";
+import NavigationBar from "../NavigationBar/NavigationBar";
 
 const Header: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const Header: React.FC = () => {
           <Clock />
           <CurrentDate />
         </div>
+        <NavigationBar />
       </div>
     </header>
   );

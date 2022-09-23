@@ -1,9 +1,8 @@
 .root {
-  span {
-    display: block;
+  div {
     font-size: 20px;
   }
-  span:first-child {
+  div:first-child {
     margin-bottom: 5px;
   }
 }
