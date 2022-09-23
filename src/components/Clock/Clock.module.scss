@@ -1,9 +1,11 @@
+@import "../../scss/variables";
 .root {
   font-size: 26px;
   margin-bottom: 5px;
 }
 
 .dots {
+  color: $accent-color;
   animation: blinking 1.5s step-start infinite;
 }
 

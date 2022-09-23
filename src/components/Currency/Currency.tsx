@@ -30,15 +30,19 @@ const Currency = () => {
       )}
       {isShowCurrency && (
         <>
-          <span>
-            $ {cutCurrencyValue(dollar!.buy)} / {cutCurrencyValue(dollar!.sale)}
-          </span>
-          <span>
-            € {cutCurrencyValue(euro!.buy)} / {cutCurrencyValue(euro!.sale)}
-          </span>
+          <div>
+            $ {cutCurrencyValue(dollar!.buy)}
+            <span className="accent__color"> / </span>
+            {cutCurrencyValue(dollar!.sale)}
+          </div>
+          <div>
+            € {cutCurrencyValue(euro!.buy)}
+            <span className="accent__color"> / </span>
+            {cutCurrencyValue(euro!.sale)}
+          </div>
         </>
       )}
-      {!!error && <h4>Сервис недоступен</h4>}
+      {!!error && <h4>Сервіс тимчасово недоступний</h4>}
     </div>
   );
 };

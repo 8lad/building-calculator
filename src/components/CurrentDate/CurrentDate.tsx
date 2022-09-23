@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { returnFullDate } from "../../utils/helpers";
+import { getCurrentFullDate } from "../../utils/helpers";
 import style from "./CurrentDate.module.scss";
 
 const CurrentDate = () => {
-  const [currentDate, setCurrentDate] = useState(returnFullDate());
+  const [currentDate, setCurrentDate] = useState(getCurrentFullDate());
 
   useEffect(() => {
     const fullDate = setInterval(() => {
-      setCurrentDate(returnFullDate());
+      setCurrentDate(getCurrentFullDate());
     }, 30000);
     return () => clearInterval(fullDate);
   }, [currentDate]);
