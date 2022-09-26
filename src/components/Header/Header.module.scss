@@ -16,6 +16,11 @@
     }
     h2 {
       font-size: 40px;
+      line-height: 1.1;
+      background: -webkit-linear-gradient(75deg, $accent-color, $border-color);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
   &__logo {

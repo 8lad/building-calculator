@@ -14,7 +14,7 @@ export const MATERIAL_TYPES: SingleMaterialType[] = [
   },
   {
     link: "/primer",
-    name: "Грунтівка",
+    name: "Грунтовка",
   },
   {
     link: "/putty",

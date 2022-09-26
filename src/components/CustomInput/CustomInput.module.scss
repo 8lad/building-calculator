@@ -1,0 +1,31 @@
+@import "../../scss/variables";
+.root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  label {
+    font-size: 24px;
+    width: 45%;
+  }
+  input {
+    width: 45%;
+    font-size: 22px;
+    line-height: 1.2;
+    padding: 0 10px;
+    outline: none;
+    border: 4px solid transparent;
+    border-radius: 5px;
+
+    &:active {
+      border-color: $accent-color;
+    }
+    &:focus-within {
+      border-color: $accent-color;
+    }
+    &:hover {
+      border-color: $accent-color;
+    }
+  }
+}
