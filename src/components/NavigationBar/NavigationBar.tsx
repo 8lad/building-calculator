@@ -1,8 +1,8 @@
 import style from "./NavigationBar.module.scss";
-import NavigationButton from "../NavigationButton/NavigationButton";
+import { NavigationButton } from "../NavigationButton/NavigationButton";
 import { MATERIAL_TYPES } from "../../utils/constants";
 
-const NavigationBar: React.FC = () => {
+export const NavigationBar: React.FC = () => {
   return (
     <ul className={style.root}>
       {MATERIAL_TYPES.map((link) => (
@@ -13,5 +13,3 @@ const NavigationBar: React.FC = () => {
     </ul>
   );
 };
-
-export default NavigationBar;

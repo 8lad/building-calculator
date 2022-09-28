@@ -6,9 +6,10 @@ interface NavigationButtonProps {
   link: string;
 }
 
-const NavigationButton: React.FC<NavigationButtonProps> = ({ name, link }) => {
-  // const params = useLocation();
-
+export const NavigationButton: React.FC<NavigationButtonProps> = ({
+  name,
+  link,
+}) => {
   return (
     <NavLink
       className={({ isActive }) =>
@@ -20,5 +21,3 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ name, link }) => {
     </NavLink>
   );
 };
-
-export default NavigationButton;

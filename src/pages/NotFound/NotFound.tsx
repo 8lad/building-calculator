@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import style from "./NotFound.module.scss";
 import pageNotFound from "../../assets/images/pageNotFound.png";
 
-const NotFound: React.FC = () => {
+export const NotFound: React.FC = () => {
   return (
     <div className="base__wrapper">
       <div className={style.root}>
@@ -13,5 +13,3 @@ const NotFound: React.FC = () => {
     </div>
   );
 };
-
-export default NotFound;

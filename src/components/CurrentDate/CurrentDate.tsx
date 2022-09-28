@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getCurrentFullDate } from "../../utils/helpers";
 import style from "./CurrentDate.module.scss";
 
-const CurrentDate = () => {
+export const CurrentDate = () => {
   const [currentDate, setCurrentDate] = useState(getCurrentFullDate());
 
   useEffect(() => {
@@ -14,5 +14,3 @@ const CurrentDate = () => {
 
   return <div className={style.root}>{currentDate}</div>;
 };
-
-export default CurrentDate;

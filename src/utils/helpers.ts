@@ -34,3 +34,14 @@ export function returnErrorText(e: Error): string {
 export function cutCurrencyValue(currency: string): string {
   return currency.replace(/\.(\d{1,2}).*$/, ".$1");
 }
+
+export function calculatePrimeCapasity(
+  workingArea: number,
+  layerAmount: number,
+  primeIndex: number,
+): string | number {
+  const calculateResult = workingArea * layerAmount * primeIndex;
+  return calculateResult % 1 < 0.05
+    ? Math.trunc(calculateResult)
+    : calculateResult.toFixed(1);
+}

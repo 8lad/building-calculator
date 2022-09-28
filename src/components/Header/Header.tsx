@@ -1,11 +1,11 @@
 import style from "./Header.module.scss";
 import logo from "../../assets/images/logo.png";
-import Clock from "../Clock/Clock";
-import CurrentDate from "../CurrentDate/CurrentDate";
-import Currency from "../Currency/Currency";
-import NavigationBar from "../NavigationBar/NavigationBar";
+import { Clock } from "../Clock/Clock";
+import { CurrentDate } from "../CurrentDate/CurrentDate";
+import { Currency } from "../Currency/Currency";
+import { NavigationBar } from "../NavigationBar/NavigationBar";
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   return (
     <header className={style.header}>
       <div className={style.header__inner}>
@@ -23,5 +23,3 @@ const Header: React.FC = () => {
     </header>
   );
 };
-
-export default Header;

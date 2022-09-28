@@ -7,7 +7,7 @@ import { CURRENCY_URL } from "../../utils/constants";
 import { cutCurrencyValue } from "../../utils/helpers";
 import style from "./Currency.module.scss";
 
-const Currency = () => {
+export const Currency = () => {
   const dispatch = useAppDispatch();
   const { dollar, euro, isLoading, error } = useSelector(
     (state: RootState) => state.currency,
@@ -46,5 +46,3 @@ const Currency = () => {
     </div>
   );
 };
-
-export default Currency;
