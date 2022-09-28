@@ -3,41 +3,36 @@ import style from "./CustomInput.module.scss";
 interface CustomInputProps {
   title: string;
   type: string;
-  value: string;
-  maxValue: number;
-  minValue: number;
-  setValue: (arg: string) => void;
   placeholder: string;
+  name: string;
+  errorMessage: string | undefined;
+  step?: number;
+  onChange: () => void;
+  value: string;
 }
 
-const CustomInput: React.FC<CustomInputProps> = ({
+export const CustomInput: React.FC<CustomInputProps> = ({
+  name,
   type,
-  value,
-  setValue,
   title,
-  maxValue,
-  minValue,
   placeholder,
+  errorMessage,
+  step,
+  onChange,
+  value,
 }) => {
-  const setInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
-
   return (
     <div className={style.root}>
-      <label htmlFor={title}>{title}</label>
+      <label htmlFor={name}>{title}</label>
       <input
-        min={minValue}
-        max={maxValue}
-        name={title}
+        step={step ?? 1}
         id={title}
         type={type}
-        value={value}
-        onChange={setInputValue}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
       />
+      {!!errorMessage && <p>* {errorMessage}</p>}
     </div>
   );
 };
-
-export default CustomInput;

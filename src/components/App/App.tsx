@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import style from "./App.module.scss";
 import background from "../../assets/images/4.jpg";
-import Header from "../Header/Header";
+import { Header } from "../Header/Header";
 import { MATERIAL_TYPES } from "../../utils/constants";
-import NotFound from "../../pages/NotFound/NotFound";
-import Primer from "../../pages/Primer/Primer";
+import { NotFound } from "../../pages/NotFound/NotFound";
+import { Primer } from "../../pages/Primer/Primer";
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const allPages = MATERIAL_TYPES.map((route) => (
     <Route key={route.link} path={route.link} element={<h1>{route.name}</h1>} />
   ));
@@ -29,5 +29,3 @@ const App: React.FC = () => {
     </div>
   );
 };
-
-export default App;

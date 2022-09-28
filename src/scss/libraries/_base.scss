@@ -40,7 +40,8 @@ h4,
 h5,
 h6,
 ul,
-ol {
+ol,
+p {
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -81,4 +82,10 @@ ol {
 }
 .accent__color {
   color: $accent-color;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

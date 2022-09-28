@@ -9,7 +9,7 @@ export const DOLLAR_CODE: string = "USD";
 export const EURO_CODE: string = "EUR";
 export const MATERIAL_TYPES: SingleMaterialType[] = [
   {
-    link: "/all",
+    link: "/",
     name: "Усі",
   },
   {

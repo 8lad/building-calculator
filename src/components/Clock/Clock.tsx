@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getCurrentHours, getCurrentMinutes } from "../../utils/helpers";
 import style from "./Clock.module.scss";
 
-const Clock: React.FC = () => {
+export const Clock: React.FC = () => {
   const [hours, setHours] = useState<number | string>(getCurrentHours());
   const [minutes, setMinutes] = useState<number | string>(getCurrentMinutes());
 
@@ -22,5 +22,3 @@ const Clock: React.FC = () => {
     </div>
   );
 };
-
-export default Clock;
