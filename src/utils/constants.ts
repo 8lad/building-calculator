@@ -1,4 +1,4 @@
-interface SingleMaterialType {
+export interface SingleMaterialType {
   link: string;
   name: string;
 }

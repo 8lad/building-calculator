@@ -39,9 +39,7 @@ export function calculatePrimeCapasity(
   workingArea: number,
   layerAmount: number,
   primeIndex: number,
-): string | number {
+): number {
   const calculateResult = workingArea * layerAmount * primeIndex;
-  return calculateResult % 1 < 0.05
-    ? Math.trunc(calculateResult)
-    : calculateResult.toFixed(1);
+  return Number(calculateResult.toFixed(3));
 }
