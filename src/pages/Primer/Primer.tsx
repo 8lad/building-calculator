@@ -1,6 +1,11 @@
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useAppDispatch } from "../../redux/store";
+import {
+  PrimerStateInterface,
+  setPrimeOptions,
+} from "../../redux/slices/primerSlice";
 import { CustomInput } from "../../components/CustomInput/CustomInput";
 import { CustomSelect } from "../../components/CustomSelect/CustomSelect";
 import { SubmitButton } from "../../components/SubmitButton/SubmitButton";
@@ -11,11 +16,12 @@ import {
   getNumberValidationRules,
   getSelectValidationRules,
 } from "../../utils/validation-helpers";
+import { calculatePrimeCapasity } from "../../utils/helpers";
 
 type FormInputs = {
   workingArea: string;
   layersAmount: string;
-  primerProperty: string | null;
+  primerProperty: string;
 };
 
 const schema = yup
@@ -33,13 +39,30 @@ const defaultValues = {
 };
 
 export const Primer = () => {
+  const dispatch = useAppDispatch();
   const {
     handleSubmit,
     formState: { errors },
     control,
   } = useForm({ defaultValues, resolver: yupResolver(schema) });
-  const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    return data;
+  const onSubmit: SubmitHandler<FormInputs> = ({
+    workingArea,
+    layersAmount,
+    primerProperty,
+  }) => {
+    const convertedPrimerProperty = JSON.parse(primerProperty);
+    const materialСonsumption = calculatePrimeCapasity(
+      +workingArea,
+      +layersAmount,
+      +convertedPrimerProperty.value,
+    );
+    const primerCreatedState: PrimerStateInterface = {
+      primer: { ...convertedPrimerProperty },
+      layersAmount: +layersAmount,
+      workingArea: +workingArea,
+      materialСonsumption,
+    };
+    dispatch(setPrimeOptions(primerCreatedState));
   };
 
   return (
