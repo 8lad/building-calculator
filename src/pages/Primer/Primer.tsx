@@ -18,6 +18,7 @@ import {
 } from "../../utils/validation-helpers";
 import { calculatePrimeCapasity } from "../../utils/helpers";
 import { WarningMessageBlock } from "../../components/WarningMessageBlock/WarningMessageBlock";
+import { YouTubeFrame } from "../../components/YouTubeFrame/YouTubeFrame";
 
 type FormInputs = {
   workingArea: string;
@@ -136,6 +137,7 @@ export const Primer = () => {
             кг
           </p>
           <WarningMessageBlock />
+          <YouTubeFrame url="https://youtu.be/y1f_V_v1XPE" />
         </div>
       )}
     </div>

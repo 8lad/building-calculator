@@ -1,3 +1,5 @@
+import { BASE_YOUTUBE_URL } from "./constants";
+
 export function getCurrentHours(): number | string {
   const hours = new Date().getHours();
   return hours < 10 ? `0${hours}` : hours;
@@ -42,4 +44,10 @@ export function calculatePrimeCapasity(
 ): number {
   const calculateResult = workingArea * layerAmount * primeIndex;
   return Number(calculateResult.toFixed(3));
+}
+
+export function getModifidedYouTubeUrl(url: string): string {
+  const urlMatchingSchema = /\/[a-zA-Z,0-9,_!@#$%^&*]*$/gm;
+  const modifiedUrl = BASE_YOUTUBE_URL + url.match(urlMatchingSchema);
+  return modifiedUrl;
 }

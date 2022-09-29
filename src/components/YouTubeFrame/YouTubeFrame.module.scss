@@ -1,0 +1,70 @@
+@import "../../scss/variables";
+
+.root {
+  padding-top: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid $border-color;
+}
+.box_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px 10px;
+  border-bottom: 2px solid $border-color;
+
+  h3 {
+    font-size: 25px;
+  }
+}
+.button {
+  width: 30px;
+  height: 30px;
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    transition: 0.5s;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    right: 0;
+    top: 50%;
+  }
+  &::before {
+    transform: rotate(90deg);
+  }
+  &::after {
+    transform: translateY(-50%);
+  }
+  &:hover {
+    &::before,
+    &::after {
+      background-color: $accent-color;
+    }
+  }
+}
+
+.button_rotate {
+  transform: rotate(45deg);
+}
+
+.video {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 1.5s;
+  display: flex;
+  justify-content: center;
+}
+
+.video_open {
+  padding-top: 30px;
+  max-height: 600px;
+  opacity: 1;
+  margin-bottom: 30px;
+  transition: 1.5s;
+}
