@@ -11,8 +11,8 @@ interface YouTubeFrameProps {
 
 export const YouTubeFrame: React.FC<YouTubeFrameProps> = ({
   url,
-  screenHeight = 315,
-  screenWidth = 560,
+  screenWidth = 800,
+  screenHeight = 400,
 }) => {
   const [isVideoOpen, setIsVideoOpen] = useState<boolean>(false);
   const currentYouTubeUrl = getModifidedYouTubeUrl(url);
