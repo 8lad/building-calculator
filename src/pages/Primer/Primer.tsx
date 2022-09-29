@@ -1,7 +1,8 @@
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useAppDispatch } from "../../redux/store";
+import { useSelector } from "react-redux";
+import { RootState, useAppDispatch } from "../../redux/store";
 import {
   PrimerStateInterface,
   setPrimeOptions,
@@ -11,12 +12,12 @@ import { CustomSelect } from "../../components/CustomSelect/CustomSelect";
 import { SubmitButton } from "../../components/SubmitButton/SubmitButton";
 import style from "./Primer.module.scss";
 import { primerProductsGroup } from "../../server/primerProductsGroup";
-import { WARNING_BEFOR_USING } from "../../utils/text-constants";
 import {
   getNumberValidationRules,
   getSelectValidationRules,
 } from "../../utils/validation-helpers";
 import { calculatePrimeCapasity } from "../../utils/helpers";
+import { WarningMessageBlock } from "../../components/WarningMessageBlock/WarningMessageBlock";
 
 type FormInputs = {
   workingArea: string;
@@ -39,6 +40,10 @@ const defaultValues = {
 };
 
 export const Primer = () => {
+  const { primer, workingArea, materialСonsumption } = useSelector(
+    (state: RootState) => state.primer,
+  );
+  const isShowCalculatings = !!primer?.name;
   const dispatch = useAppDispatch();
   const {
     handleSubmit,
@@ -119,14 +124,20 @@ export const Primer = () => {
 
         <SubmitButton text="Розрахувати" />
       </form>
-      <div className={style.description}>
-        <h3>Результат розрахунків</h3>
-        <p>Приблизне використання на полщу складає: кг</p>
-        <p>
-          Приблизне використання на 1м<sup>2</sup> складає: кг
-        </p>
-        <span>* {WARNING_BEFOR_USING}</span>
-      </div>
+      {isShowCalculatings && (
+        <div className={style.description}>
+          <h3>Результат розрахунків</h3>
+          <p>
+            Приблизне використання {primer.name} на полщу {workingArea}м
+            <sup>2</sup> складає: {materialСonsumption}кг
+          </p>
+          <p>
+            Приблизне використання на 1м<sup>2</sup> складає: {primer?.value}
+            кг
+          </p>
+          <WarningMessageBlock />
+        </div>
+      )}
     </div>
   );
 };
