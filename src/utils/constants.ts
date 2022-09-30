@@ -12,26 +12,22 @@ export const EURO_CODE: string = "EUR";
 export const MATERIAL_TYPES: SingleMaterialType[] = [
   {
     link: "/",
-    name: "Усі",
+    name: "Головна",
   },
   {
-    link: "/primer",
-    name: "Грунтовка",
+    link: "/inside",
+    name: "Внутрішні",
   },
   {
-    link: "/putty",
-    name: "Шпаклівка",
+    link: "/outside",
+    name: "Зовнішні",
   },
   {
-    link: "/plaster",
-    name: "Штукатурка",
+    link: "/electricity",
+    name: "Електрика",
   },
   {
-    link: "/tile-adhesive",
-    name: "Клей для плитки",
-  },
-  {
-    link: "/csm",
-    name: "ЦПС",
+    link: "/climat",
+    name: "Клімат",
   },
 ];
