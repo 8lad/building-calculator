@@ -4,7 +4,6 @@ import background from "../../assets/images/background.jpg";
 import { Header } from "../Header/Header";
 import { MATERIAL_TYPES } from "../../utils/constants";
 import { NotFound } from "../../pages/NotFound/NotFound";
-import { Primer } from "../../pages/Primer/Primer";
 
 export const App: React.FC = () => {
   const allPages = MATERIAL_TYPES.map((route) => (
@@ -23,7 +22,6 @@ export const App: React.FC = () => {
             {allPages}
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <Primer />
         </div>
       </BrowserRouter>
     </div>
