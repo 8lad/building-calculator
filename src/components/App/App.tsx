@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import style from "./App.module.scss";
-import background from "../../assets/images/4.jpg";
+import background from "../../assets/images/background.jpg";
 import { Header } from "../Header/Header";
 import { MATERIAL_TYPES } from "../../utils/constants";
 import { NotFound } from "../../pages/NotFound/NotFound";
