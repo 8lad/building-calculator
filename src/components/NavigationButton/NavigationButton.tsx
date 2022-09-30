@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { NavLink } from "react-router-dom";
 import style from "./NavigationButton.module.scss";
 
@@ -12,10 +13,9 @@ export const NavigationButton: React.FC<NavigationButtonProps> = ({
 }) => {
   return (
     <NavLink
-      className={({ isActive }) =>
-        isActive ? `${style.root} active` : `${style.root}`
-      }
+      className={({ isActive }) => clsx(style.root, isActive && style.active)}
       to={link}
+      end
     >
       {name}
     </NavLink>
