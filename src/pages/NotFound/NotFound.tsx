@@ -8,7 +8,7 @@ export const NotFound: React.FC = () => {
       <div className={style.root}>
         <img src={pageNotFound} alt="helmet" />
         <h1>Нажаль такої сторінки немає</h1>
-        <Link to="/all">Повернутись на головну </Link>
+        <Link to="/">Повернутись на головну </Link>
       </div>
     </div>
   );
