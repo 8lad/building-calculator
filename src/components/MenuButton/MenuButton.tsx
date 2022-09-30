@@ -7,7 +7,7 @@ interface MenuButtonProps {
   imageUrl: string;
 }
 
-const MenuButton: React.FC<MenuButtonProps> = ({
+export const MenuButton: React.FC<MenuButtonProps> = ({
   title,
   pageUrl,
   imageUrl,
@@ -21,5 +21,3 @@ const MenuButton: React.FC<MenuButtonProps> = ({
     </Link>
   );
 };
-
-export default MenuButton;
