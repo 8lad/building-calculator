@@ -1,5 +1,9 @@
 import { MenuButton } from "../../components/MenuButton/MenuButton";
-import buttonIcon from "../../assets/images/icon-menu.svg";
+import climatIcon from "../../assets/images/icon-menu-climat.svg";
+import insideIcon from "../../assets/images/icon-menu-inside.svg";
+import outsideIcon from "../../assets/images/icon-menu-outside.svg";
+import electricityIcon from "../../assets/images/icon-menu-electricity.svg";
+
 import style from "./MainPage.module.scss";
 
 export const MainPage = () => {
@@ -11,20 +15,20 @@ export const MainPage = () => {
       <div className={style.inner}>
         <MenuButton
           title="Внутрішні роботи"
-          imageUrl={buttonIcon}
+          imageUrl={insideIcon}
           pageUrl="/inside"
         />
         <MenuButton
           title="Зовнішні роботи"
-          imageUrl={buttonIcon}
+          imageUrl={outsideIcon}
           pageUrl="/outside"
         />
         <MenuButton
           title="Електрика"
-          imageUrl={buttonIcon}
+          imageUrl={electricityIcon}
           pageUrl="/electricity"
         />
-        <MenuButton title="Клімат" imageUrl={buttonIcon} pageUrl="/climat" />
+        <MenuButton title="Клімат" imageUrl={climatIcon} pageUrl="/climat" />
       </div>
       <div className="base__text">
         Данний застосунок призначений для того, щоб приблизно розрахувати
