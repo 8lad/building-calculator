@@ -3,7 +3,6 @@ import climatIcon from "../../assets/images/icon-menu-climat.svg";
 import insideIcon from "../../assets/images/icon-menu-inside.svg";
 import outsideIcon from "../../assets/images/icon-menu-outside.svg";
 import electricityIcon from "../../assets/images/icon-menu-electricity.svg";
-
 import style from "./MainPage.module.scss";
 
 export const MainPage = () => {
