@@ -1,0 +1,22 @@
+.root {
+  display: grid;
+  width: 100%;
+  gap: 35px;
+  padding: 20px 0;
+  @media (min-width: 320px) {
+    grid-template-columns: repeat(1, minmax(150px, 210px));
+    justify-content: center;
+  }
+  @media (min-width: 490px) {
+    grid-template-columns: repeat(2, minmax(150px, 210px));
+  }
+  @media (min-width: 740px) {
+    grid-template-columns: repeat(3, minmax(150px, 210px));
+  }
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(4, minmax(150px, 210px));
+  }
+  @media (min-width: 1150px) {
+    grid-template-columns: repeat(5, minmax(150px, 210px));
+  }
+}
